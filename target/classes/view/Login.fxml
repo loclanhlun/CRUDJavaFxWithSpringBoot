@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="600.0" styleClass="login-view" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huynhbaoloc.controller.LoginController">
+   <children>
+      <HBox prefHeight="60.0" prefWidth="600.0" styleClass="login-title">
+         <children>
+            <Label styleClass="header" text="Login" />
+         </children>
+      </HBox>
+      <VBox styleClass="login-body">
+         <children>
+            <GridPane hgap="10.0" vgap="5.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="235.0" minWidth="10.0" prefWidth="99.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="398.0" minWidth="10.0" prefWidth="291.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label fx:id="message" GridPane.columnIndex="1" />
+                  <Label text="User name" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="57.0" text="Password" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                  <TextField fx:id="username" prefHeight="25.0" prefWidth="320.0" promptText="Enter your user name" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <PasswordField fx:id="password" promptText="Enter your password" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <HBox prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <children>
+                        <Button fx:id="btnCancel" mnemonicParsing="false" onAction="#cancel" prefHeight="25.0" prefWidth="91.0" styleClass="wid-120" text="Cancel" />
+                        <Button fx:id="btnLogin" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="92.0" styleClass="wid-120" text="Login" />
+                     </children>
+                     <styleClass>
+                        <String fx:value="al-center-left" />
+                        <String fx:value="sp-5" />
+                     </styleClass>
+                  </HBox>
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</VBox>
