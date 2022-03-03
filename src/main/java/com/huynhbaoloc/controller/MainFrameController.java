@@ -1,6 +1,7 @@
 package com.huynhbaoloc.controller;
 
 import com.huynhbaoloc.SpringBootCRUDApplication;
+import com.huynhbaoloc.common.Dialog;
 import com.huynhbaoloc.utils.Menu;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -34,7 +35,12 @@ public class MainFrameController {
     private void clickMenu(MouseEvent event) throws IOException {
         Node node = ((Node) event.getSource());
         if(node.getId().equals("Exit")) {
-            sideBar.getScene().getWindow().hide();
+            //need to confirm
+            Dialog.DialogBuilder.builder()
+                    .title("Confirm")
+                    .message("Do you want to exit?")
+                    .okActionListener(() -> sideBar.getScene().getWindow().hide())
+                    .build().show();
         } else {
             Menu menu = Menu.valueOf(node.getId());
             loadView(menu);
@@ -52,6 +58,9 @@ public class MainFrameController {
         FXMLLoader loader = new FXMLLoader(MainFrameController.class.getResource("/view/"+ menu.getFxml()));
         loader.setControllerFactory(SpringBootCRUDApplication.getApplicationContext()::getBean);
         Parent view = loader.load();
+
+        AbstractController controller = loader.getController();
+        controller.setTitle(menu);
         contentView.getChildren().add(view);
     }
     public static void show() throws IOException {

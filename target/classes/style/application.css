@@ -39,8 +39,8 @@
 }
 
 .button:hover, .button:focused {
-    -fx-background-color: secondary;
-    -fx-text-fill: white;
+    -fx-background-color: primary;
+    -fx-text-fill: secondary-light;
 }
 
 .main-frame {
@@ -86,6 +86,8 @@
 .content-view {
     -fx-pref-width: 1180px;
     -fx-pref-height: 780px;
+    -fx-max-width: 5000px;
+    -fx-max-height: 3000px;
 }
 
 .content-view-header {
@@ -96,6 +98,44 @@
     -fx-font-size: 20px;
 }
 
+.dialog {
+    -fx-pref-width: 600px;
+    -fx-background-color: primary-light;
+}
 
+.dialog-icon {
+    -fx-pref-width: 160px;
+    -fx-alignment: center;
+    -fx-background-color: primary;
+}
+
+.dialog-icon SVGPath {
+    -fx-fill: secondary-light;
+}
+
+.dialog-body {
+    -fx-padding: 20px;
+    -fx-alignment: center-left;
+}
+
+.dialog-title {
+    -fx-font-size: 24px;
+}
+
+.dialog-message-box {
+    -fx-padding: 20 0 20 0;
+}
+
+.dialog-message-box Label{
+    -fx-font-size: 18px;
+}
+
+.dialog-button-box {
+    -fx-alignment: center-right;
+}
+
+.sp-10 {
+    -fx-spacing: 10;
+}
 
 

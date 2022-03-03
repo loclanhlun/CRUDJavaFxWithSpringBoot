@@ -6,12 +6,16 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huynhbaoloc.controller.HomeController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huynhbaoloc.controller.HomeController">
    <children>
       <HBox>
          <children>
-            <Label styleClass="title" text="Home" />
+            <Label fx:id="title" styleClass="title" />
          </children>
       </HBox>
    </children>
+   <styleClass>
+      <String fx:value="content-view-header" />
+      <String fx:value="content-view" />
+   </styleClass>
 </VBox>

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.shape.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="content-view" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huynhbaoloc.controller.StudentController">
     <children>
-        <HBox>
+        <HBox styleClass="content-view-header">
             <children>
-                <Label styleClass="title" text="Student" />
+                <Label fx:id="title" styleClass="title" text="Student Management" />
             </children>
         </HBox>
+      <TilePane prefHeight="200.0" prefWidth="1167.0" styleClass="student-container" />
     </children>
 </VBox>
