@@ -43,6 +43,7 @@ public class MainFrameController {
                     .build().show();
         } else {
             Menu menu = Menu.valueOf(node.getId());
+            System.out.println(node.getId());
             loadView(menu);
         }
     }

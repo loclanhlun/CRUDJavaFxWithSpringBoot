@@ -2,6 +2,7 @@ package com.huynhbaoloc.utils;
 
 public enum Menu {
     Home("Dashboard"),
+    ClassRoom("ClassRoom Management"),
     Student("Student Management"),
     Exit("Exit");
 

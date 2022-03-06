@@ -138,4 +138,25 @@
     -fx-spacing: 10;
 }
 
+.student-container {
+    -fx-padding: 0 20 20 20;
+}
+
+.student-item {
+    -fx-alignment: center-left;
+    -fx-pref-width: 1180px;
+    -fx-pref-height: 46px;
+    -fx-spacing: 50;
+}
+
+.student-item Label {
+    -fx-pref-width: 345px;
+}
+
+.student-item:hover {
+    -fx-background-color: gray;
+}
+
+
+
 
