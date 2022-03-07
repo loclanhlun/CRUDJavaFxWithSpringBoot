@@ -157,6 +157,26 @@
     -fx-background-color: gray;
 }
 
+.add-button {
+    -fx-padding: 10 30 10 30;
+    -fx-alignment: center;
+}
+
+.search-bar {
+    -fx-alignment: center-left;
+    -fx-padding: 0 0 0 20;
+    -fx-spacing: 10px;
+}
+.search-bar > TextField {
+    -fx-pref-width: 200px;
+    -fx-max-width: 280px;
+}
+
+.table-wrapper {
+    -fx-padding: 20;
+}
+
+
 
 
 

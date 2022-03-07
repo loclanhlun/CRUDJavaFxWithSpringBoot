@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.shape.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" styleClass="dialog" stylesheets="@../style/application.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.huynhbaoloc.controller.ClassRoomEdit">
+   <children>
+      <VBox styleClass="dialog-icon">
+         <children>
+            <SVGPath content="M16 1l-16 16 3 3 3-3v13h8v-6h4v6h8v-13l3 3 3-3-16-16zM16 14c-1.105 0-2-0.895-2-2s0.895-2 2-2c1.105 0 2 0.895 2 2s-0.895 2-2 2z" scaleX="3.0" scaleY="3.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="200.0" prefWidth="438.0">
+         <children>
+            <Label fx:id="title" styleClass="dialog-title" text="Class Room Edit" />
+            <VBox styleClass="dialog-message-box">
+               <children>
+                  <Label fx:id="message" text="Label" />
+                  <VBox>
+                     <children>
+                        <Label text="Code" />
+                        <TextField prefHeight="66.0" prefWidth="398.0" promptText="Enter your code" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Name" />
+                        <TextField promptText="Enter your class name" />
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Status" />
+                        <ComboBox maxWidth="1.7976931348623157E308" promptText="Select option" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+            <HBox>
+               <children>
+                  <Button fx:id="okBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="wid-120" text="Save" />
+                  <Button mnemonicParsing="false" onAction="#cancel" styleClass="wid-120" text="Cancel" />
+               </children>
+               <styleClass>
+                  <String fx:value="sp-10" />
+                  <String fx:value="dialog-button-box" />
+               </styleClass>
+            </HBox>
+         </children>
+         <styleClass>
+            <String fx:value="dialog-body" />
+            <String fx:value="sp-10" />
+         </styleClass>
+      </VBox>
+   </children>
+</HBox>

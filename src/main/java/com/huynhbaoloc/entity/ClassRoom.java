@@ -1,12 +1,14 @@
 package com.huynhbaoloc.entity;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Collection;
 
 @Entity
 @Data
+@NoArgsConstructor
 public class ClassRoom {
 
     @Id
