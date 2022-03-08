@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.cell.*?>
 <?import javafx.scene.shape.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -14,7 +14,7 @@
                       <Label fx:id="title" styleClass="title" text="ClassRoom Management" />
                   </children>
               </HBox>
-            <VBox styleClass="add-button">
+            <VBox onMouseClicked="#addNew" styleClass="add-button">
                <children>
                   <SVGPath content="M31 12h-11v-11c0-0.552-0.448-1-1-1h-6c-0.552 0-1 0.448-1 1v11h-11c-0.552 0-1 0.448-1 1v6c0 0.552 0.448 1 1 1h11v11c0 0.552 0.448 1 1 1h6c0.552 0 1-0.448 1-1v-11h11c0.552 0 1-0.448 1-1v-6c0-0.552-0.448-1-1-1z" />
                </children>
@@ -24,7 +24,7 @@
       <HBox styleClass="search-bar">
          <children>
             <TextField fx:id="name" prefHeight="27.0" prefWidth="183.0" promptText="Enter your search" />
-            <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Search" />
+            <Button mnemonicParsing="false" onAction="#search" prefHeight="27.0" prefWidth="97.0" text="Search" />
             <Button layoutX="223.0" layoutY="10.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" text="Clear" />
          </children>
       </HBox>
@@ -32,10 +32,26 @@
          <children>
             <TableView fx:id="tableView">
               <columns>
-                <TableColumn prefWidth="94.0" text="ID" />
-                <TableColumn prefWidth="344.0" text="Code" />
-                  <TableColumn prefWidth="331.0" text="Name" />
-                  <TableColumn prefWidth="370.0" text="Status" />
+                <TableColumn prefWidth="94.0" text="ID">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="id" />
+                    </cellValueFactory>
+                </TableColumn>
+                  <TableColumn prefWidth="344.0" text="Code" >
+                      <cellValueFactory>
+                          <PropertyValueFactory property="code" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="331.0" text="Name">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="name" />
+                      </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn prefWidth="370.0" text="Status">
+                      <cellValueFactory>
+                          <PropertyValueFactory property="status" />
+                      </cellValueFactory>
+                  </TableColumn>
               </columns>
             </TableView>
          </children>

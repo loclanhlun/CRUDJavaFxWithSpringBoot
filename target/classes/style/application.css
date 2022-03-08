@@ -158,8 +158,16 @@
 }
 
 .add-button {
-    -fx-padding: 10 30 10 30;
+    -fx-pref-width: 100px;
     -fx-alignment: center;
+}
+
+.add-button:hover {
+    -fx-background-color: primary-light;
+}
+
+.add-button:hover SVGPath{
+    -fx-fill: secondary-light;
 }
 
 .search-bar {

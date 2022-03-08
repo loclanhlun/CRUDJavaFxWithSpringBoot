@@ -8,7 +8,10 @@ import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Supplier;
 
 @Controller
 public class ClassRoomController extends AbstractController{
@@ -21,6 +24,8 @@ public class ClassRoomController extends AbstractController{
     @Autowired
     private ClassRoomService classRoomService;
 
+
+
     @FXML
     private void initialize() {
         loadData();
@@ -29,8 +34,25 @@ public class ClassRoomController extends AbstractController{
     @FXML
     private void search() {
         tableView.getItems().clear();
+        List<Integer> lists = new ArrayList<>();
+        lists.add(0);
+        lists.add(1);
+
         List<ClassRoom> list = classRoomService.search(name.getText());
         tableView.getItems().addAll(list);
+
+        tableView.setOnMouseClicked(event -> {
+            if(event.getClickCount() == 2)  {
+                ClassRoom classRoom = tableView.getSelectionModel().getSelectedItem();
+                if(null != classRoom) {
+                    try {
+                        ClassRoomEdit.edit(classRoom, this::save, lists);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+        });
     }
 
     @FXML
@@ -42,11 +64,13 @@ public class ClassRoomController extends AbstractController{
     }
 
     @FXML
-    private void addNew() {
-        ClassRoomEdit.addNew(this::save);
+    private void addNew() throws IOException {
+        List<Integer> list = new ArrayList<>();
+        ClassRoomEdit.addNew(this::save, list);
     }
 
     private void save(ClassRoom classRoom) {
         classRoomService.save(classRoom);
+        search();
     }
 }

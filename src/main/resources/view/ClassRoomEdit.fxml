@@ -17,30 +17,30 @@
             <Label fx:id="title" styleClass="dialog-title" text="Class Room Edit" />
             <VBox styleClass="dialog-message-box">
                <children>
-                  <Label fx:id="message" text="Label" />
+                  <Label fx:id="message" />
                   <VBox>
                      <children>
                         <Label text="Code" />
-                        <TextField prefHeight="66.0" prefWidth="398.0" promptText="Enter your code" />
+                        <TextField fx:id="code" prefHeight="66.0" prefWidth="398.0" promptText="Enter your code" />
                      </children>
                   </VBox>
                   <VBox>
                      <children>
                         <Label text="Name" />
-                        <TextField promptText="Enter your class name" />
+                        <TextField fx:id="name" promptText="Enter your class name" />
                      </children>
                   </VBox>
                   <VBox>
                      <children>
                         <Label text="Status" />
-                        <ComboBox maxWidth="1.7976931348623157E308" promptText="Select option" />
+                        <ComboBox fx:id="status" maxWidth="1.7976931348623157E308" promptText="Select option" />
                      </children>
                   </VBox>
                </children>
             </VBox>
             <HBox>
                <children>
-                  <Button fx:id="okBtn" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" styleClass="wid-120" text="Save" />
+                  <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#save" styleClass="wid-120" text="Save" />
                   <Button mnemonicParsing="false" onAction="#cancel" styleClass="wid-120" text="Cancel" />
                </children>
                <styleClass>
