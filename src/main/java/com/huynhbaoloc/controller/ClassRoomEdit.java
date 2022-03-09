@@ -2,7 +2,6 @@ package com.huynhbaoloc.controller;
 
 import com.huynhbaoloc.AccountException;
 import com.huynhbaoloc.entity.ClassRoom;
-import com.huynhbaoloc.service.ClassRoomService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -12,7 +11,6 @@ import javafx.scene.control.TextField;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.IOException;
 import java.util.List;
@@ -60,9 +58,7 @@ public class ClassRoomEdit {
     @FXML
     private void save() {
         try {
-            classRoom.setCode(code.getText());
-            classRoom.setName(name.getText());
-            classRoom.setStatus(status.getValue());
+            validate();
             saveHandler.accept(classRoom);
             cancel();
         }catch (AccountException e){
@@ -72,13 +68,29 @@ public class ClassRoomEdit {
         }
     }
 
+    private void validate() {
+        if(code.getText().isEmpty()) {
+            throw new AccountException("Please enter class code.");
+        }
+        if(name.getText().isEmpty()) {
+            throw new AccountException("Please enter class name.");
+        }
+        if (status.getValue() == null) {
+            throw new AccountException("Please choose status");
+        }
+        classRoom.setCode(code.getText());
+        classRoom.setName(name.getText());
+        classRoom.setStatus(status.getValue());
+    }
+
     @FXML
     private void cancel() {
         name.getScene().getWindow().hide();
     }
+
     private void init(ClassRoom classRoom, Consumer<ClassRoom> saveHandler, List<Integer> list) {
         this.saveHandler = saveHandler;
-        status.getItems().addAll(0,1);
+        status.getItems().addAll(list);
         if(null == classRoom) {
             title.setText("Add new Class Room");
             this.classRoom = new ClassRoom();

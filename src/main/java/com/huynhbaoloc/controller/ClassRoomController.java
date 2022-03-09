@@ -29,18 +29,9 @@ public class ClassRoomController extends AbstractController{
     @FXML
     private void initialize() {
         loadData();
-    }
-
-    @FXML
-    private void search() {
-        tableView.getItems().clear();
         List<Integer> lists = new ArrayList<>();
         lists.add(0);
         lists.add(1);
-
-        List<ClassRoom> list = classRoomService.search(name.getText());
-        tableView.getItems().addAll(list);
-
         tableView.setOnMouseClicked(event -> {
             if(event.getClickCount() == 2)  {
                 ClassRoom classRoom = tableView.getSelectionModel().getSelectedItem();
@@ -56,6 +47,17 @@ public class ClassRoomController extends AbstractController{
     }
 
     @FXML
+    private void search() {
+        tableView.getItems().clear();
+
+
+        List<ClassRoom> list = classRoomService.search(name.getText());
+        tableView.getItems().addAll(list);
+
+
+    }
+
+    @FXML
     private void loadData() {
         tableView.getItems().clear();
         List<ClassRoom> list = classRoomService.findAll();
@@ -66,6 +68,8 @@ public class ClassRoomController extends AbstractController{
     @FXML
     private void addNew() throws IOException {
         List<Integer> list = new ArrayList<>();
+        list.add(0);
+        list.add(1);
         ClassRoomEdit.addNew(this::save, list);
     }
 
